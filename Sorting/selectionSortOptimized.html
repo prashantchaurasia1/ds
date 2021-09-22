@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Selection Sort Optimized- Ascending Order</h2>
+        <div id="unsortedArray"></div>
+        <div id="sortedArray"></div>
+    </body>
+    <script>
+        var arr = [5,10,1,6,3,20,5,1,6,3,10,20];
+        document.getElementById("unsortedArray").innerHTML = "Unsorted Array" + JSON.stringify(arr);
+        var counter = 0;
+        for( var i = 0; i < arr.length; i++ ) {
+            var min_index = i;
+            var new_mi = i;
+            for( var j = i+1; j < arr.length; j++ ) {
+                counter++;
+                
+                if( arr[j] < arr[min_index] ) {
+                    min_index = j;
+                }
+            }
+            var _temp = arr[i];
+            arr[i] = arr[min_index];
+            arr[min_index] = _temp;
+            
+            if(new_mi == min_index) {
+            	break;
+            }
+        }
+        document.getElementById("sortedArray").innerHTML = "Sorted Array" + JSON.stringify(arr);
+        alert(counter);
+    </script>
+</html> 

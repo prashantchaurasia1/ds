@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Bubble Sort - Ascending Order</h2>
+<div id="unsortedArray"></div>
+<div id="sortedArray"></div>
+
+
+</body>
+<script>
+	var arr = [5,10,1,6,3];
+    document.getElementById("unsortedArray").innerHTML = "Unsorted Array" + JSON.stringify(arr);
+    for( var i = 0; i < arr.length; i++ ) {
+        var _flag = 0;
+        for( var j = 0; j < arr.length - i - 1; j++ ) {
+            if( arr[j] > arr[j+1] ) {
+            	var _temp = arr[j];
+        		arr[j] = arr[j+1];
+        		arr[j+1] = _temp;
+                _flag = 1;
+            }
+        }
+        
+        if(_flag == 0) {
+        	break;
+        }
+        
+    }
+    document.getElementById("sortedArray").innerHTML = "Sorted Array" + JSON.stringify(arr);
+    console.log(arr);
+</script>
+</html> 
